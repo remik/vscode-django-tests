@@ -2,7 +2,7 @@
     "name": "django-tests",
     "displayName": "Django Tests",
     "description": "Run Django Tests",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "remdym",
     "repository": {
         "type" : "git",
@@ -24,7 +24,7 @@
 			{
 				"title": "Command prefix",
 				"properties": {
-					"python.djangoTests.prefix_command": {
+					"python.djangoTests.prefixCommand": {
 						"type": "string",
 						"default": "",
 						"description": "Prefix before the command",

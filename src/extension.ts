@@ -13,16 +13,13 @@ function runTests(): void {
     if (editor) {
         const currentDocument = editor.document;
         const configuration = vscode.workspace.getConfiguration('', currentDocument.uri);
-        const python = configuration.get('python.pythonPath');
-        const prefix_command = configuration.get('python.djangoTests.prefix_command');
-
         if (!terminal) {
             terminal = vscode.window.createTerminal('DjangoTests');
         }
         terminal.show();
         const cmds = [
-            prefix_command,
-            python,
+            vscode.workspace.getConfiguration('', currentDocument.uri),
+            configuration.get('python.pythonPath'),
             "./manage.py",
             "test",
             testsPath
