@@ -14,6 +14,10 @@
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "django", "django tests", "tests"
+    ],
+
     "activationEvents": [
         "onCommand:extension.runCurrentTests",
         "onCommand:extension.runPreviousTests"
