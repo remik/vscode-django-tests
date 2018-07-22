@@ -51,10 +51,12 @@ function onRunCurrentTests(): void {
             let matched;
             for (let line of lines) {
                 if (line.trim()) {
-                    matched = line.match(TEST_FUNC_RE);
-                    if (matched) {
-                        functionName = matched[2];
-                        continue;
+                    if (!functionName) {
+                        matched = line.match(TEST_FUNC_RE);
+                        if (matched) {
+                            functionName = matched[2];
+                            continue;
+                        }
                     }
 
                     matched = line.match(TEST_CLASS_RE);
