@@ -11,14 +11,13 @@ const TEST_CLASS_RE = /(\s*)class\s+(\w+)/i;
 function runTests(): void {
     const editor = vscode.window.activeTextEditor;
     if (editor) {
-        const currentDocument = editor.document;
-        const configuration = vscode.workspace.getConfiguration('', currentDocument.uri);
+        const configuration = vscode.workspace.getConfiguration('', editor.document.uri);
         if (!terminal) {
             terminal = vscode.window.createTerminal('DjangoTests');
         }
         terminal.show();
         const cmds = [
-            vscode.workspace.getConfiguration('', currentDocument.uri),
+            configuration.get('python.djangoTests.prefixCommand'),
             configuration.get('python.pythonPath'),
             "./manage.py",
             "test",

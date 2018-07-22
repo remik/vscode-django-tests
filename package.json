@@ -2,7 +2,7 @@
     "name": "django-tests",
     "displayName": "Django Tests",
     "description": "Run Django Tests",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "remdym",
     "repository": {
         "type" : "git",
