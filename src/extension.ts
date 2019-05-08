@@ -21,6 +21,7 @@ function runTests(): void {
             configuration.get('python.pythonPath'),
             "./manage.py",
             "test",
+            configuration.get('python.djangoTests.flags'),
             testsPath
         ];
         terminal.sendText(cmds.join(" "));
