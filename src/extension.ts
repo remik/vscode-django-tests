@@ -63,11 +63,15 @@ function onRunCurrentTests(): void {
                 }
             }
 
-            const folderSeparator = "/"; // TODO: add windows too
+            const unixFolderSeparator = "/";
+            const windowsFolderSeparator = "\\";
+            const windowsFolderSeparator2 = "\\\\";
             testsPath = currentDocument.fileName
                 .replace(currentWorkspacePath.uri.fsPath, "")
                 .replace(".py", "")
-                .replace(new RegExp(folderSeparator, "g"), ".")
+                .replace(new RegExp(unixFolderSeparator, "g"), ".")
+                .replace(new RegExp(windowsFolderSeparator2, "g"), ".")
+                .replace(new RegExp(windowsFolderSeparator, "g"), ".")
                 .substring(1);
 
             if (className) {
